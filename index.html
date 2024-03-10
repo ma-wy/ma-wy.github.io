@@ -37,7 +37,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </nav>
 -->
 <section class="w3-main w3-padding-large" style="width:20%" id="sidebar"> 
-	<p> 1 </p>
+	<p> 2 </p>
 </section>
 
 <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
@@ -264,16 +264,12 @@ function letItSnow(flakes, target) {
   d.getElementsByTagName('head')[0].appendChild(s);
   var k = d.createElement('div');
   k.classList.add('snowy-sky');
-  d.getElementsById('sidebar')[0].appendChild(k);
-  
-//  target ? target.appendChild(k) : d.body.appendChild(k);
+  target ? target.appendChild(k) : d.body.appendChild(k);
 
   function r(v) {
     var c = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     return Math.floor(Math.random() * v) + c;
   }
-
-  var snowflakeArray = [];
   
   for (var i = 0; i < flakes; i++) {
     var f = d.createElement('div');
@@ -289,7 +285,7 @@ function letItSnow(flakes, target) {
     k.appendChild(f);
   }
 } 
-letItSnow(200)  
+letItSnow(200, sidebar)  
 
 
 	// 设置div背景的宽高
@@ -298,7 +294,7 @@ letItSnow(200)
 	background.style.height = innerHeight + 'px'
 	
 	// 获取canvas对象
-	var canvas = document.getElementById("canvas")
+	var canvas = document.getElementById("sidebar")
 	// 获取画笔
 	var ctx = canvas.getContext("2d")
 	
