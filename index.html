@@ -19,7 +19,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 
 <body> 
-
+<p>1</p>
 
 
 <script>
@@ -27,7 +27,7 @@ function letItSnow(flakes, target) {
   var d = document;
   var s = d.createElement('style');
   s.type = 'text/css';
-  s.innerHTML = ".snowy-sky{overflow:hidden;position:absolute;left:0;top:0;background-color:#b6becc;width:20%;hight=100%}.snow-flake{position:absolute;filter: blur(1px);background-color:#fff;animation:snowy 14s linear infinite}@keyframes snowy{0%{transform:translateX(-500%);top:-20%}100%{transform:translateX(500%);top:100%}}";
+  s.innerHTML = ".snowy-sky{overflow:hidden;position:absolute;left:0;top:0;background-color:#b6becc;background-repeat:repeat-y;width:20%;hight=100%}.snow-flake{position:absolute;filter: blur(1px);background-color:#fff;animation:snowy 14s linear infinite}@keyframes snowy{0%{transform:translateX(-500%);top:-20%}100%{transform:translateX(500%);top:100%}}";
   d.getElementsByTagName('head')[0].appendChild(s);
   var k = d.createElement('div');
   k.classList.add('snowy-sky');
