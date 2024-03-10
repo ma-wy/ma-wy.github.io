@@ -272,8 +272,6 @@ function letItSnow(flakes, target) {
     var c = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     return Math.floor(Math.random() * v) + c;
   }
-
-  var snowflakeArray = [];
   
   for (var i = 0; i < flakes; i++) {
     var f = d.createElement('div');
@@ -293,7 +291,7 @@ function letItSnow(flakes, target) {
 
 
 	// 设置div背景的宽高
-	background = document.getElementByTagName("background")
+	background = document.getElementById("background")
 	background.style.width = innerWidth + 'px'
 	background.style.height = innerHeight + 'px'
 	
