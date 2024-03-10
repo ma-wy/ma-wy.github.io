@@ -36,8 +36,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <div class="w3-main w3-padding-large w3-blue" style="margin-right:40%">
 </nav>
 -->
-<section class="w3-main w3-padding-large w3-transparent" style="width:20%" id="sidebar"> 
-	<p> 9 </p>
+<section class="w3-main w3-padding-large" style="width:20%" id="sidebar"> 
+	<p> 1 </p>
 </section>
 
 <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
@@ -262,9 +262,11 @@ function letItSnow(flakes, target) {
   s.type = 'text/css';
   s.innerHTML = ".snowy-sky{overflow:hidden;position:absolute;left:0;top:0;background-color:#b6becc;width:100%;height:100%}.snow-flake{position:absolute;filter: blur(1px);background-color:#fff;animation:snowy 14s linear infinite}@keyframes snowy{0%{transform:translateX(-500%);top:-20%}100%{transform:translateX(500%);top:100%}}";
   d.getElementsByTagName('head')[0].appendChild(s);
-  var k = d.getElementsById("sidebar").createElement('div');
+  var k = d.createElement('div');
   k.classList.add('snowy-sky');
-  target ? target.appendChild(k) : d.body.appendChild(k);
+  d.getElementsById('sidebar')[0].appendChild(k);
+  
+//  target ? target.appendChild(k) : d.body.appendChild(k);
 
   function r(v) {
     var c = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
