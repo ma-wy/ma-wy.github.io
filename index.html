@@ -26,10 +26,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <body> 
 
 <!-- Sidebar with image -->
-<nav class="w3-sidebar w3-hide-medium w3-hide-small w3-blue" style="width:40%">
+<nav class="w3-sidebar w3-hide-medium w3-hide-small w3-blue" style="width:40%" id="sidebar">
 <!--	<div class="bgimg"></div> 
 <div class="w3-main w3-padding-large w3-blue" style="margin-right:40%">-->
-<p> 2 </p>
+<p> 3 </p>
 </nav>
 
 <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
@@ -247,7 +247,7 @@ function letItSnow(flakes, target) {
   var s = d.createElement('style');
   s.type = 'text/css';
   s.innerHTML = ".snowy-sky{overflow:hidden;position:absolute;left:0;top:0;background-color:#b6becc;width:100%;height:100%}.snow-flake{position:absolute;filter: blur(1px);background-color:#fff;animation:snowy 14s linear infinite}@keyframes snowy{0%{transform:translateX(-500%);top:-20%}100%{transform:translateX(500%);top:100%}}";
-  d.getElementsByTagName('head')[0].appendChild(s);
+  d.getElementsById('sidebar')[0].appendChild(s);
   var k = d.createElement('div');
   k.classList.add('snowy-sky');
   target ? target.appendChild(k) : d.body.appendChild(k);
