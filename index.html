@@ -37,7 +37,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 -->
 <section class="w3-main w3-padding-large" style="width:20% background-color:#b6becc" id="sidebar"> 
 	<div class="bgimg" id="snow-sky">	</div>
-	<p> 1 </p>
+	<p> 2 </p>
 </section>
 
 <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
@@ -266,8 +266,7 @@ function letItSnow(flakes, target) {
  // k.classList.add('snowy-sky');
 //  target ? target.appendChild(k) : d.body.appendChild(k);
   var k = d.getElementsById('snow-sky')
-
-
+  
   function r(v) {
     var c = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     return Math.floor(Math.random() * v) + c;
@@ -289,91 +288,6 @@ function letItSnow(flakes, target) {
 } 
 //letItSnow(200, sidebar)  
 
-
-	// 设置div背景的宽高
-	background = document.getElementByTagName("head")
-	background.style.width = innerWidth + 'px'
-	background.style.height = innerHeight + 'px'
-	
-	// 获取canvas对象
-	var canvas = document.getElementById("sidebar")
-	// 获取画笔
-	var ctx = canvas.getContext("2d")
-	
-	// 设置canvas宽高
-	canvas.height = innerHeight
-	canvas.width = innerWidth
-	
-	// 定义一个粒子数组
-	var particlesArray = []
-	// 定义页面内粒子的数量
-	var count = parseInt(canvas.width / 80 * canvas.height / 80)
-	
-	
-	// 定义粒子类
-	class Particle {
-	    constructor(x, y) {
-	        this.x = x
-	        this.y = y
-	        // x，y轴的移动速度  -0.5 -- 0.5
-	        this.directionX = Math.random() - 0.5
-	        this.directionY = Math.random() - 0.5
-	    }
-	
-	    // 更新点的坐标
-	    update() {
-	        this.x += this.directionX
-	        this.y += this.directionY
-	    }
-	
-	    // 绘制粒子
-	    draw() {
-	        ctx.beginPath()
-	        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2)
-	        ctx.closePath()
-	        ctx.fillStyle = "white"
-	        ctx.fill()
-	    }
-	}
-	
-	// 创建粒子
-	function createParticle() {
-	    // 生成一个点的随机坐标
-	    var x = Math.random() * innerWidth
-	    var y = Math.random() * innerHeight
-	
-	    particlesArray.push(new Particle(x, y))
-	}
-	
-	// 处理粒子
-	// 先更新坐标，再绘制出来
-	function handleParticle() {
-	    for(var i = 0; i < particlesArray.length; i++) {
-	        var particle = particlesArray[i]
-	        particle.update()
-	        particle.draw()
-	        // 超出范围就将这个粒子删除
-	        if(particle.x < 0 || particle.x > canvas.width || particle.y < 0 || particle.y > canvas.height) {
-	            particlesArray.splice(i, 1)
-	        }
-	    }
-	}
-	
-	function draw() {
-	    // 首先清空画布
-	    ctx.clearRect(0, 0, canvas.width, canvas.height)
-	    // 如果粒子数量小于规定数量，就生成新的粒子
-	    if(particlesArray.length < count) {
-	        createParticle()
-	    }
-	
-	    // 处理粒子
-	    handleParticle()
-	}
-	
-	// 设置定时器
-	setInterval(draw, 10)
-	
 </script>
 
 
