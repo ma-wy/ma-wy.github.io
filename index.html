@@ -22,6 +22,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 }
 -->
 
+
 </style>
 </head>
 
@@ -35,11 +36,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <div class="w3-main w3-padding-large w3-blue" style="margin-right:40%">
 </nav>
 -->
-<section class="w3-main w3-padding-large w3-transparent" style="width:20%"> 
-	<div id="background">
-		<canvas id="canvas"></canvas>
-	</div>
-	<p> 2 </p>
+<section class="w3-main w3-padding-large w3-transparent" style="width:20%" id="sidebar"> 
+	<p> 9 </p>
 </section>
 
 <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
@@ -264,7 +262,7 @@ function letItSnow(flakes, target) {
   s.type = 'text/css';
   s.innerHTML = ".snowy-sky{overflow:hidden;position:absolute;left:0;top:0;background-color:#b6becc;width:100%;height:100%}.snow-flake{position:absolute;filter: blur(1px);background-color:#fff;animation:snowy 14s linear infinite}@keyframes snowy{0%{transform:translateX(-500%);top:-20%}100%{transform:translateX(500%);top:100%}}";
   d.getElementsByTagName('head')[0].appendChild(s);
-  var k = d.createElement('div');
+  var k = d.getElementsById("sidebar").createElement('div');
   k.classList.add('snowy-sky');
   target ? target.appendChild(k) : d.body.appendChild(k);
 
@@ -272,6 +270,8 @@ function letItSnow(flakes, target) {
     var c = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     return Math.floor(Math.random() * v) + c;
   }
+
+  var snowflakeArray = [];
   
   for (var i = 0; i < flakes; i++) {
     var f = d.createElement('div');
@@ -287,11 +287,11 @@ function letItSnow(flakes, target) {
     k.appendChild(f);
   }
 } 
-//letItSnow(200)  
+letItSnow(200)  
 
 
 	// 设置div背景的宽高
-	background = document.getElementById("background")
+	background = document.getElementByTagName("head")
 	background.style.width = innerWidth + 'px'
 	background.style.height = innerHeight + 'px'
 	
