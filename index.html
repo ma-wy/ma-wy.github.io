@@ -22,7 +22,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 }
 -->
 
-
 </style>
 </head>
 
@@ -37,7 +36,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </nav>
 -->
 <section class="w3-main w3-padding-large w3-transparent" style="width:20%"> 
-	<p> 9 </p>
+	<div id="background">
+		<canvas id="canvas"></canvas>
+	</div>
+	<p> 1 </p>
 </section>
 
 <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
@@ -291,7 +293,7 @@ function letItSnow(flakes, target) {
 
 
 	// 设置div背景的宽高
-	background = document.getElementByTagName("head")
+	background = document.getElementByTagName("background")
 	background.style.width = innerWidth + 'px'
 	background.style.height = innerHeight + 'px'
 	
